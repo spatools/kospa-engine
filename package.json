@@ -1,0 +1,34 @@
+{
+  "name": "@kospa/engine",
+  "version": "0.1.0",
+  "description": "Template Engine component for kospa framework",
+  "homepage": "https://github.com/spatools/kospa-engine",
+  "author": "Touchify (dev@touchify.co)",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spatools/kospa-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spatools/kospa-engine/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kospa",
+    "knockout",
+    "ko",
+    "spa",
+    "framework",
+    "engine",
+    "app"
+  ],
+  "dependencies": {
+    "@kospa/base": "^0.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.2"
+  }
+}
