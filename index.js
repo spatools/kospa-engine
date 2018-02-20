@@ -1,21 +1,28 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 (function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    else if (typeof define === 'function' && define.amd) {
+    else if (typeof define === "function" && define.amd) {
         define(["require", "exports", "knockout", "@kospa/base/system"], factory);
     }
 })(function (require, exports) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var ko = require("knockout");
     var system = require("@kospa/base/system");
     var SOURCE_REGEXP = /^text!(.+)/, sources = {};
-    var ModuleSource = (function () {
+    var ModuleSource = /** @class */ (function () {
         function ModuleSource(source, options) {
             if (options === void 0) { options = {}; }
             this.source = source;
@@ -94,12 +101,13 @@ var __extends = (this && this.__extends) || function (d, b) {
     }());
     exports.ModuleSource = ModuleSource;
     ko.templateSources["module"] = ModuleSource;
-    var ModuleEngine = (function (_super) {
+    var ModuleEngine = /** @class */ (function (_super) {
         __extends(ModuleEngine, _super);
         function ModuleEngine(innerEngine) {
-            _super.call(this);
-            this.allowTemplateRewriting = false;
-            this._innerEngine = innerEngine || new ModuleEngine.defaults.engine();
+            var _this = _super.call(this) || this;
+            _this.allowTemplateRewriting = false;
+            _this._innerEngine = innerEngine || new ModuleEngine.defaults.engine();
+            return _this;
         }
         ModuleEngine.prototype.makeTemplateSource = function (template, templateDocument, options) {
             // Module template
@@ -139,7 +147,6 @@ var __extends = (this && this.__extends) || function (d, b) {
         setTemplateEngine();
     }
     exports.init = init;
-    Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = defaultInstance;
     //#endregion
     function parseMarkup(markup) {

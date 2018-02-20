@@ -1,3 +1,4 @@
+/// <reference types="knockout" />
 import * as ko from "knockout";
 export interface ModuleTemplateObservable extends ko.Observable<string> {
     data: any;
