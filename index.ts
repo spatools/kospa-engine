@@ -154,7 +154,7 @@ export class ModuleEngine extends ko.templateEngine {
     public makeTemplateSource(template: any, templateDocument: Document, options?: any): any {
         // Module template
         if (typeof template === "string" && ModuleSource.isModuleTemplateSource(template)) {
-            return new ko.templateSources["Module"](template, options);
+            return new ko.templateSources["module"](template, options);
         }
 
         //Call base method
