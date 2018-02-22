@@ -112,7 +112,7 @@ var __extends = (this && this.__extends) || (function () {
         ModuleEngine.prototype.makeTemplateSource = function (template, templateDocument, options) {
             // Module template
             if (typeof template === "string" && ModuleSource.isModuleTemplateSource(template)) {
-                return new ko.templateSources["Module"](template, options);
+                return new ko.templateSources["module"](template, options);
             }
             //Call base method
             return this._innerEngine.makeTemplateSource.call(this._innerEngine, template, templateDocument);
